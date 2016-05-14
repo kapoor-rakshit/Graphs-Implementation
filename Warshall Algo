@@ -1,0 +1,36 @@
+#include<bits/stdc++.h>
+
+main()
+{
+int n,m;
+printf("Enter no. of nodes\n");
+scanf("%d",&n);
+printf("Enter no. of connections and connections\n");
+scanf("%d",&m);
+bool a[n+1][n+1];
+for(int i=1;i<=n;i++)
+for(int j=1;j<=n;i++)
+a[i][j]=false;
+for(int i=1;i<=m;i++)
+{
+int l,r;
+scanf("%d%d",&l,&r);
+a[l][r]=true;
+}
+for(int i=1;i<=n;i++)
+for(int j=1;j<=n;j++)
+for(int k=1;k<=n;k++)
+a[j][k]=a[j][k]||(a[j][i]&&a[i][k]);
+
+for(int i=1;i<=n;i++)
+{
+for(int j=1;j<=n;i++)
+{
+if(a[i][j])
+printf("1 ");
+else printf("0 ");
+}
+printf("\n");
+}
+
+}
