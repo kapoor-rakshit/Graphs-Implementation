@@ -1,3 +1,7 @@
+/*Weight matrix gives distance of all pair shortest path*/
+/*Path matrix can store parents to track path*/
+/*If value in weight matrix is negative at diagonal then, there is a negative weight cycle*/
+
 #include<bits/stdc++.h>
 using namespace std;
 bool a[1000][1000];
